@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wasaka Robotic Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Optional: Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --delft-blue: #1D2A62;
+      --carolina-blue: #87AECE;
+      --beige: #F5F3D8;
+      --pistachio: #AFD06E;
+      --fern-green: #437118;
+      --text-dark: #1A1A1A;
+      --text-muted: #4B5563;
+      --white: #ffffff;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-dark);
+      background-color: var(--beige);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      color: var(--delft-blue);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(29, 42, 98, 0.97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      color: var(--beige);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1.05rem;
+    }
+
+    .logo span {
+      color: var(--pistachio);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-links a {
+      color: var(--beige);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--pistachio);
+      color: var(--delft-blue);
+    }
+
+    /* Hero */
+    #home {
+      background: radial-gradient(circle at top left, var(--carolina-blue) 0, var(--delft-blue) 55%, #0B102A 100%);
+      color: var(--beige);
+      padding: 5rem 0 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 32rem;
+      margin-bottom: 1.75rem;
+      color: rgba(245, 243, 216, 0.94);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--pistachio);
+      color: var(--delft-blue);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(245, 243, 216, 0.7);
+      color: var(--beige);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(245, 243, 216, 0.12);
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .highlight-card {
+      background-color: rgba(245, 243, 216, 0.08);
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.75rem;
+      font-size: 0.85rem;
+      border: 1px solid rgba(245, 243, 216, 0.15);
+    }
+
+    .hero-visual {
+      background: linear-gradient(135deg, var(--pistachio), var(--fern-green));
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      color: var(--delft-blue);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-visual h3 {
+      color: var(--delft-blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background-color: rgba(29, 42, 98, 0.1);
+      border: 1px solid rgba(29, 42, 98, 0.35);
+    }
+
+    /* Generic cards + grid */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+
+    .section-intro {
+      max-width: 42rem;
+      margin: 0.5rem auto 2rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    /* About */
+    #about {
+      background-color: var(--beige);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .list {
+      padding-left: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .subheading {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      margin-bottom: 0.5rem;
+      color: var(--delft-blue);
+    }
+
+    /* NEW: org structure horizontal cards */
+    .org-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .role-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--white);
+      border-radius: 0.9rem;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 7px 16px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .role-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--carolina-blue), var(--delft-blue));
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .role-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .role-info h3 {
+      margin-bottom: 0.1rem;
+      font-size: 0.95rem;
+      color: var(--delft-blue);
+    }
+
+    .role-info p {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    /* Divisions */
+    #divisions {
+      background-color: var(--carolina-blue);
+    }
+
+    #divisions h2,
+    #divisions h3 {
+      color: var(--delft-blue);
+    }
+
+    #divisions .card {
+      background-color: rgba(245, 243, 216, 0.97);
+    }
+
+    /* Robots & Projects */
+    #robots-projects {
+      background-color: var(--beige);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: rgba(135, 174, 206, 0.18);
+      color: var(--delft-blue);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .robot-highlights {
+      font-size: 0.85rem;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .placeholder-image {
+      width: 100%;
+      height: 150px;
+      border-radius: 0.8rem;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--carolina-blue), var(--pistachio));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Achievements */
+    #achievements {
+      background-color: var(--white);
+    }
+
+    .achievements-list {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--pistachio);
+      padding-left: 1rem;
+    }
+
+    .achievement-item {
+      margin-bottom: 1rem;
+    }
+
+    .achievement-item span.year {
+      font-weight: 600;
+      color: var(--fern-green);
+      margin-right: 0.5rem;
+    }
+
+    .achievement-item strong {
+      color: var(--delft-blue);
+    }
+
+    /* Join Us */
+    #join-us {
+      background: linear-gradient(135deg, var(--pistachio), #d8ecaa);
+    }
+
+    #join-us h2,
+    #join-us h3 {
+      color: var(--delft-blue);
+    }
+
+    .join-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(245, 243, 216, 0.96);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .join-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .btn-join-wrapper {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* Sponsors */
+    #sponsors {
+      background-color: var(--carolina-blue);
+    }
+
+    #sponsors h2 {
+      color: var(--delft-blue);
+    }
+
+    .sponsor-packages {
+      margin-top: 1.5rem;
+    }
+
+    .sponsor-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .logo-placeholder {
+      background-color: rgba(245, 243, 216, 0.9);
+      border-radius: 0.9rem;
+      padding: 1.5rem 0.75rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border: 1px dashed rgba(67, 113, 24, 0.6);
+    }
+
+    /* Gallery */
+    #gallery {
+      background-color: var(--beige);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .gallery-item {
+      background-color: var(--white);
+      border-radius: 0.9rem;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .gallery-thumb {
+      height: 140px;
+      background: linear-gradient(135deg, var(--carolina-blue), var(--delft-blue));
+    }
+
+    .gallery-caption {
+      padding: 0.55rem 0.8rem 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+    #contact {
+      background-color: var(--delft-blue);
+      color: var(--beige);
+    }
+
+    #contact h2 {
+      color: var(--beige);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-info p {
+      color: rgba(245, 243, 216, 0.9);
+    }
+
+    .contact-info a {
+      color: var(--pistachio);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      background-color: rgba(15, 23, 42, 0.7);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .form-group {
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background-color: rgba(15, 23, 42, 0.9);
+      color: var(--beige);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(209, 213, 219, 0.7);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      background-color: var(--pistachio);
+      color: var(--delft-blue);
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #c3e58b;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0b102a;
+      color: rgba(229, 231, 235, 0.85);
+      font-size: 0.8rem;
+      padding: 1rem 0;
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-grid,
+      .about-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .navbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        WASAKA <span>ROBOTIC TEAM</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#divisions">Divisions</a></li>
+          <li><a href="#robots-projects">Robots &amp; Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#join-us">Join Us</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="hero-title">Wasaka Robotic Team</h1>
+        <p class="hero-subtitle">
+          A student robotics team focused on research, development, and national-level robot competitions.
+          We build robots, grow talent, and keep learning together.
+        </p>
+        <div class="hero-buttons">
+          <a href="#robots-projects" class="btn btn-primary">View Our Robots</a>
+          <a href="#join-us" class="btn btn-outline">Join Wasaka</a>
+        </div>
+        <div class="hero-highlights">
+          <div class="highlight-card">Focus on KRI, legged robots, and autonomous systems.</div>
+          <div class="highlight-card">Based in Indonesia with an open, collaborative culture.</div>
+          <div class="highlight-card">Open for partnerships, sponsorships, and technical collaborations.</div>
+        </div>
+      </div>
+      <aside class="hero-visual">
+        <h3>Robotics in Motion</h3>
+        <p>
+          From search-and-rescue robots to experimental hexapods & humanoids, Wasaka Robotic Team
+          is a living lab for future engineers.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">Embedded Systems</span>
+          <span class="badge">Control &amp; Kinematics</span>
+          <span class="badge">AI &amp; Perception</span>
+          <span class="badge">Machine Learning</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Wasaka Robotic Team</h2>
+      <p class="section-intro">
+        Wasaka Robotic Team is a student organization dedicated to building robots and creating
+        meaningful learning experiences in robotics, engineering, and technology.
+      </p>
+
+      <div class="about-layout">
+        <div>
+          <p>
+            Wasaka Robotic Team is a student organization focused on robot research and development.
+            Our activities range from national robotics competitions to internal research projects
+            that aim to bring technology closer to society.
+          </p>
+          <p>
+            The team welcomes students from different backgrounds and skill levels. We learn robotics
+            from the ground up: electronics, programming, mechanics, and artificial intelligence.
+            Regular practice sessions, design reviews, and knowledge-sharing meetups are part of
+            our weekly rhythm.
+          </p>
+
+          <div>
+            <div class="subheading">Vision</div>
+            <p>
+              To become an excellent, innovative, and sustainable robotics team that can compete
+              at national and international levels.
+            </p>
+
+            <div class="subheading">Mission</div>
+            <ul class="list">
+              <li>Build a strong learning and research culture in robotics.</li>
+              <li>Develop reliable robots for competitions and real-world applications.</li>
+              <li>Prepare students to innovate in technology and industry.</li>
+              <li>Create networks with other teams, communities, and industry partners.</li>
+            </ul>
+          </div>
+
+          <!-- Organizational Structure BELOW mission, horizontal cards with avatar -->
+          <div class="subheading" style="margin-top: 1.5rem;">Organizational Structure</div>
+          <div class="org-list">
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- Replace src with photo of General Manager -->
+                <!-- <img src="img/naufal.jpg" alt="Naufal Elyzar" /> -->
+              </div>
+              <div class="role-info">
+                <h3>General Manager</h3>
+                <p>Naufal Elyzar</p>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- <img src="img/yos.jpg" alt="Yos" /> -->
+              </div>
+              <div class="role-info">
+                <h3>Vice General Manager</h3>
+                <p>Yos</p>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- <img src="img/musthafa.jpg" alt="Musthafa Hadi Ulya" /> -->
+              </div>
+              <div class="role-info">
+                <h3>Hexion Leader</h3>
+                <p>Musthafa Hadi Ulya</p>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- <img src="img/danu.jpg" alt="Ahmad Danu Fauzan" /> -->
+              </div>
+              <div class="role-info">
+                <h3>Hexion Vice Leader</h3>
+                <p>Ahmad Danu Fauzan</p>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- <img src="img/harry.jpg" alt="Harry Pratama Yunus" /> -->
+              </div>
+              <div class="role-info">
+                <h3>Arkadhira Leader</h3>
+                <p>Harry Pratama Yunus</p>
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar">
+                <!-- <img src="img/renatha.jpg" alt="Renatha" /> -->
+              </div>
+              <div class="role-info">
+                <h3>Public Relations &amp; Media</h3>
+                <p>Renatha</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Organizational Structure -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divisions -->
+  <section id="divisions">
+    <div class="container">
+      <h2>Divisions</h2>
+      <p class="section-intro">
+        Our team is organized into divisions that focus on different types of robots and skill sets.
+        Members can specialize or explore multiple areas.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>KRSRI Team</h3>
+          <p>
+            Focused on the Indonesian Search and Rescue Robot Contest (KRSRI), this team develops
+            robots that navigate challenging arenas, detect victims, and complete mission scenarios.
+          </p>
+        </div>
+        <div class="card">
+          <h3>KRSBI Team</h3>
+          <p>
+            Dedicated on the Indonesian Humanoid Soccer Robot Contest (KRSBI Humanoid), this team 
+            develops autonomous humanoid robots capable of playing soccer, navigating the field, 
+            maintaining balance, and executing strategic movements during competitive match scenarios.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Racing Plane Team</h3>
+          <p>
+            Focused on the Racing Plane division of the Indonesian Flying Robotics Contest (KRTI), 
+            this team develops high-speed unmanned aircraft designed for optimal aerodynamics, 
+            agile maneuvering, and precise autonomous or remote-controlled flight to compete in 
+            time-based racing challenges.
+          </p>
+        </div>
+      </div>
+
+      <p class="section-intro" style="margin-top: 2rem;">
+        Each division collaborates and shares knowledge so members can explore different areas of robotics
+        while still contributing to one unified team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Robots & Projects -->
+  <section id="robots-projects">
+    <div class="container">
+      <h2>Robots &amp; Projects</h2>
+      <p class="section-intro">
+        Here are some of the robots and platforms that represent our work. All entries below
+        use dummy descriptions and can be replaced with real project data later.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="placeholder-image">Robot Visual</div>
+          <span class="tag">Hexapod Robot</span>
+          <h3>Hexayos</h3>
+          <p>
+            A six-legged robot built to walk stably on different terrains. It serves as a research
+            platform for motion control, inverse kinematics, and physics-based simulations.
+          </p>
+          <ul class="robot-highlights">
+            <li>6 legs with 18 degrees of freedom.</li>
+            <li>Powered by a microcontroller and mini PC.</li>
+            <li>Supports simulation in virtual environments.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="placeholder-image">Robot Visual</div>
+          <span class="tag">5-DoF Robotic Arm</span>
+          <h3>Wasaka-Arm</h3>
+          <p>
+            A 5-DoF robotic manipulator designed for precision tasks and object handling. 
+            It provides stable motion, accurate positioning, and flexible movement for a wide range of operations.
+          </p>
+          <ul class="robot-highlights">
+            <li>5 degrees of freedom for versatile articulation.</li>
+            <li>High-torque servo motors for stable control.</li>
+            <li>Capable of performing pick-and-place operations.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="placeholder-image">Robot Visual</div>
+          <span class="tag">KRTMI Robot</span>
+          <h3>Wasaka-Sorter</h3>
+          <p>
+            A smart waste-sorting robot developed for the KRTMI 2024 competition. 
+            It identifies, classifies, and separates various types of waste autonomously using sensors and machine learning.
+          </p>
+          <ul class="robot-highlights">
+            <li>Object detection and classification with vision sensors.</li>
+            <li>Automated waste-sorting mechanism.</li>
+            <li>Designed for high accuracy and eco-friendly waste handling.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <div class="container">
+      <h2>Achievements</h2>
+      <p class="section-intro">
+        Below is the updated list of achievements based on the team’s real competition journey.
+        These entries reflect progress from early participation to notable success.
+      </p>
+
+      <div class="achievements-list">
+
+        <div class="achievement-item">
+          <span class="year">2025</span>
+          <strong>3rd Place – Kompetisi STEM Robotic Indonesia</strong>
+          <p>
+            Achieved a podium finish with strong performance in robot design, functionality,
+            and mission execution.
+          </p>
+        </div>
+
+        <div class="achievement-item">
+          <span class="year">2024</span>
+          <strong>Participant – KRSRI & KRTMI (Regional Selection)</strong>
+          <p>
+            Successfully passed the administrative and technical stages, advancing to the regional
+            selection for both rescue robot and waste-sorting robot categories.
+          </p>
+        </div>
+
+        <div class="achievement-item">
+          <span class="year">2022–2023</span>
+          <strong>Participant – KRSRI (Regional Selection)</strong>
+          <p>
+            Competed consistently in the KRSRI contest and reached the regional selection stage each year,
+            marking steady development of the search-and-rescue robot platform.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="section-intro" style="margin-top: 1.75rem;">
+        The achievements reflect continuous improvement and growing competitive experience
+        across multiple national robotics competitions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Join Us -->
+  <section id="join-us">
+    <div class="container">
+      <h2>Join Us</h2>
+      <div class="join-content">
+        <p>
+          Wasaka Robotic Team is always open to students who want to learn and grow in robotics,
+          whether they are complete beginners or already experienced.
+        </p>
+
+        <div class="join-grid">
+          <div>
+            <h3>Who Can Join?</h3>
+            <ul class="list">
+              <li>Students from any study program who are interested in technology.</li>
+              <li>Willing to spend time on practice, research, and competition preparation.</li>
+              <li>Ready to learn new things and work in a team environment.</li>
+              <li>No need to be an expert; a strong learning attitude is more important.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>How to Apply</h3>
+            <ul class="list">
+              <li>Fill out the online registration form (link will be opened during recruitment periods).</li>
+              <li>Join an introduction session about the team and its divisions.</li>
+              <li>Complete a simple task based on your interest: mechanical, electrical, software, or documentation.</li>
+              <li>Attend a short interview to discuss motivation and commitment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btn-join-wrapper">
+          <a href="#" class="btn btn-primary">
+            Apply (Google Form)
+          </a>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+            Recruitment is currently closed. Please follow our social media for the latest updates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors -->
+  <section id="sponsors">
+    <div class="container">
+      <h2>Sponsors &amp; Partnership</h2>
+      <p class="section-intro">
+        We welcome collaboration with partners who want to support robotics development and
+        student achievements.
+      </p>
+
+      <div class="sponsor-packages grid grid-3">
+        <div class="card">
+          <h3>Why Support Us?</h3>
+          <ul class="list">
+            <li>Brand exposure on team jackets, robots, and social media.</li>
+            <li>Involvement in technology and educational activities.</li>
+            <li>Direct contribution to developing young talents in robotics.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Bronze &amp; Silver Packages</h3>
+          <ul class="list">
+            <li>Bronze: logo on banners and digital posters.</li>
+            <li>Silver: logo on banners, digital posters, and team jackets.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Gold Package</h3>
+          <ul class="list">
+            <li>All previous benefits.</li>
+            <li>Logo on robots used in competitions.</li>
+            <li>Special mention in official presentations and media releases.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sponsor-logos">
+        <div class="logo-placeholder">Sponsor Logo 1</div>
+        <div class="logo-placeholder">Sponsor Logo 2</div>
+        <div class="logo-placeholder">Sponsor Logo 3</div>
+      </div>
+
+      <p class="section-intro" style="margin-top: 1.75rem;">
+        For detailed sponsorship proposals, packages can be customized based on partner needs and collaboration scope.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p class="section-intro">
+        A quick look at the activities inside and outside the lab. All images below are placeholders
+        and can be replaced with real photos later.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-thumb"></div>
+          <div class="gallery-caption">Regular practice session in the robotics lab.</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-thumb"></div>
+          <div class="gallery-caption">Preparing robots before a competition run.</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-thumb"></div>
+          <div class="gallery-caption">Visiting and learning from other robotics teams.</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-thumb"></div>
+          <div class="gallery-caption">Testing robots on a mock-up competition arena.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            Feel free to reach out for collaboration, sponsorship, event invitations, or any questions
+            about our team.
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:wasakaroboticteam@example.com">wasakaroboticteam@example.com</a><br>
+            <strong>Instagram:</strong> <a href="#">@wasakaroboticteam</a><br>
+            <strong>YouTube:</strong> Wasaka Robotic Team (Dummy Channel)<br>
+            <strong>Lab Location:</strong> Robotics Laboratory, [University Name]
+          </p>
+        </div>
+        <div>
+          <form onsubmit="event.preventDefault(); alert('This is a demo form. Replace with a real handler later.');">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="How can we help?" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Wasaka Robotic Team. All rights reserved.</div>
+      <div>This website is under development and currently uses dummy content.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
