@@ -393,7 +393,27 @@
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-    }
+      }
+    
+      .placeholder-image {
+        width: 100%;
+        aspect-ratio: 19/6;
+        background: #e5e7eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 12px;
+        position: relative;
+      }
+    
+      .placeholder-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
 
     /* Achievements */
     #achievements {
@@ -502,8 +522,24 @@
     }
 
     .gallery-thumb {
-      height: 140px;
-      background: linear-gradient(135deg, var(--carolina-blue), var(--delft-blue));
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .gallery-caption {
@@ -524,9 +560,62 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      grid-template-columns: 1fr;
       gap: 2rem;
       margin-top: 1.5rem;
+    }
+
+    .contact-info p {
+      color: rgba(245, 243, 216, 0.9);
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.2rem;
+      background-color: rgba(67, 113, 24, 0.15);
+      border-left: 3px solid var(--pistachio);
+      border-radius: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      background-color: rgba(67, 113, 24, 0.25);
+      transform: translateX(5px);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      min-width: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-details h4 {
+      margin: 0 0 0.4rem 0;
+      font-size: 1rem;
+      color: var(--pistachio);
+      font-weight: 600;
+    }
+
+    .contact-details p {
+      margin: 0;
+      color: rgba(245, 243, 216, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
     .contact-info p {
@@ -615,6 +704,18 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      section {
+        padding: 2.5rem 0;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
       .hero-grid,
       .about-layout,
       .contact-grid {
@@ -627,8 +728,44 @@
         gap: 0.5rem;
       }
 
+      .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar nav ul li {
+        width: 100%;
+      }
+
+      .navbar nav ul li a {
+        display: block;
+        padding: 0.5rem 0;
+      }
+
       .hero-visual {
         order: -1;
+      }
+
+      .contact-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 2rem 0;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -737,7 +874,7 @@
             <div class="role-card">
               <div class="role-avatar">
                 <!-- Replace src with photo of General Manager -->
-                <!-- <img src="img/naufal.jpg" alt="Naufal Elyzar" /> -->
+                <img src="https://i.ibb.co.com/Zpd9ftkn/Naufal.jpg  " alt="Naufal Elyzar" />
               </div>
               <div class="role-info">
                 <h3>General Manager</h3>
@@ -746,16 +883,16 @@
             </div>
             <div class="role-card">
               <div class="role-avatar">
-                <!-- <img src="img/yos.jpg" alt="Yos" /> -->
+                <img src="https://i.ibb.co.com/rRhqppxn/Yos.jpg" alt="Yosnandia Dwi Nurahma" />
               </div>
               <div class="role-info">
                 <h3>Vice General Manager</h3>
-                <p>Yos</p>
+                <p>Yosnandia Dwi Nurahma</p>
               </div>
             </div>
             <div class="role-card">
               <div class="role-avatar">
-                <!-- <img src="img/musthafa.jpg" alt="Musthafa Hadi Ulya" /> -->
+                <img src="https://i.ibb.co.com/Xkv9Mkqz/Ulya.jpg" alt="Musthafa Hadi Ulya" />
               </div>
               <div class="role-info">
                 <h3>Hexion Leader</h3>
@@ -764,7 +901,7 @@
             </div>
             <div class="role-card">
               <div class="role-avatar">
-                <!-- <img src="img/danu.jpg" alt="Ahmad Danu Fauzan" /> -->
+                <img src="https://i.ibb.co.com/NgXZHdqq/Danu2.jpg" alt="Ahmad Danu Fauzan" />
               </div>
               <div class="role-info">
                 <h3>Hexion Vice Leader</h3>
@@ -773,7 +910,7 @@
             </div>
             <div class="role-card">
               <div class="role-avatar">
-                <!-- <img src="img/harry.jpg" alt="Harry Pratama Yunus" /> -->
+                <img src="https://i.ibb.co.com/9kVq46L2/Harry.jpg" alt="Harry Pratama Yunus" />
               </div>
               <div class="role-info">
                 <h3>Arkadhira Leader</h3>
@@ -782,11 +919,11 @@
             </div>
             <div class="role-card">
               <div class="role-avatar">
-                <!-- <img src="img/renatha.jpg" alt="Renatha" /> -->
+                <img src="https://i.ibb.co.com/Ldk36Fw3/Guntur2.jpg" alt="M. Guntur Ricky Adhitya" />
               </div>
               <div class="role-info">
-                <h3>Public Relations &amp; Media</h3>
-                <p>Renatha</p>
+                <h3>Arkadhira Vice Leader</h3>
+                <p>M. Guntur Ricky Adhitya</p>
               </div>
             </div>
           </div>
@@ -850,7 +987,9 @@
 
       <div class="grid grid-3">
         <div class="card">
-          <div class="placeholder-image">Robot Visual</div>
+          <div class="placeholder-image">
+            <img src="https://i.ibb.co.com/S4xBQ6ks/Whats-App-Image-2026-03-31-at-17-49-19.jpg" alt="Hexaka Robot" style="width:100%;height:auto;border-radius:12px;object-fit:cover;" />
+          </div>
           <span class="tag">Hexapod Robot</span>
           <h3>Hexayos</h3>
           <p>
@@ -865,7 +1004,9 @@
         </div>
 
         <div class="card">
-          <div class="placeholder-image">Robot Visual</div>
+          <div class="placeholder-image">
+            <img src="https://i.ibb.co.com/8LZdss2P/Whats-App-Image-2026-03-31-at-17-51-00.jpg" alt="Wasaka-Arm" style="width:100%;height:auto;border-radius:12px;object-fit:cover;" />
+          </div>
           <span class="tag">5-DoF Robotic Arm</span>
           <h3>Wasaka-Arm</h3>
           <p>
@@ -880,7 +1021,9 @@
         </div>
 
         <div class="card">
-          <div class="placeholder-image">Robot Visual</div>
+          <div class="placeholder-image">
+            <img src="https://i.ibb.co.com/BH0XtBx2/Whats-App-Image-2026-03-31-at-18-48-06.jpg" alt="Wasaka-Sorter" style="width:100%;height:auto;border-radius:12px;object-fit:cover;" />
+          </div>
           <span class="tag">KRTMI Robot</span>
           <h3>Wasaka-Sorter</h3>
           <p>
@@ -989,7 +1132,7 @@
   </section>
 
   <!-- Sponsors -->
-  <section id="sponsors">
+  <!-- <section id="sponsors">
     <div class="container">
       <h2>Sponsors &amp; Partnership</h2>
       <p class="section-intro">
@@ -1033,7 +1176,7 @@
         For detailed sponsorship proposals, packages can be customized based on partner needs and collaboration scope.
       </p>
     </div>
-  </section>
+  </section> -->
 
   <!-- Gallery -->
   <section id="gallery">
@@ -1046,19 +1189,19 @@
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"><img src="https://i.ibb.co.com/RpP395Y8/Belajar.jpg" alt="Practice session" /></div>
           <div class="gallery-caption">Regular practice session in the robotics lab.</div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"><img src="https://i.ibb.co.com/4ZxRZkh0/IMG-20250914-020832-628.jpg" alt="Competition preparation" /></div>
           <div class="gallery-caption">Preparing robots before a competition run.</div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"><img src="https://i.ibb.co.com/23zwpjvW/Studi.jpg" alt="Learning from other teams" /></div>
           <div class="gallery-caption">Visiting and learning from other robotics teams.</div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-thumb"></div>
+          <div class="gallery-thumb"><img src="https://i.ibb.co.com/jZRWT6P0/Arena.jpg" alt="Testing robots" /></div>
           <div class="gallery-caption">Testing robots on a mock-up competition arena.</div>
         </div>
       </div>
@@ -1068,43 +1211,73 @@
   <!-- Contact -->
   <section id="contact">
     <div class="container">
-      <h2>Contact</h2>
+      <h2>Contact & Connect With Us</h2>
+      <p class="section-intro" style="color: rgba(245, 243, 216, 0.9); max-width: 600px;">
+        We'd love to hear from you! Whether you have questions, want to collaborate, or are interested in sponsoring our team, reach out through any of these channels.
+      </p>
       <div class="contact-grid">
         <div class="contact-info">
-          <p>
-            Feel free to reach out for collaboration, sponsorship, event invitations, or any questions
-            about our team.
-          </p>
-          <p>
-            <strong>Email:</strong> <a href="mailto:wasakaroboticteam@example.com">wasakaroboticteam@example.com</a><br>
-            <strong>Instagram:</strong> <a href="#">@wasakaroboticteam</a><br>
-            <strong>YouTube:</strong> Wasaka Robotic Team (Dummy Channel)<br>
-            <strong>Lab Location:</strong> Robotics Laboratory, [University Name]
-          </p>
+          <div class="contact-cards-grid">
+            <!-- Email Card -->
+            <div class="contact-card">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:wasakaroboticteam@gmail.com">wasakaroboticteam@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Instagram Card -->
+            <div class="contact-card">
+              <div class="contact-icon">📱</div>
+              <div class="contact-details">
+                <h4>Instagram</h4>
+                <a href="https://www.instagram.com/wasakaroboticteam" target="_blank">@wasakaroboticteam</a>
+              </div>
+            </div>
+
+            <!-- YouTube Card -->
+            <div class="contact-card">
+              <div class="contact-icon">▶️</div>
+              <div class="contact-details">
+                <h4>YouTube</h4>
+                <a href="https://www.youtube.com/@WasakaRoboticTeam" target="_blank">Wasaka Robotic Team</a>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-card">
+              <div class="contact-icon">📍</div>
+              <div class="contact-details">
+                <h4>Lab Location</h4>
+                <p style="font-size: 0.9rem; margin: 0.3rem 0 0 0;">Lab Rekayasa Elektronika, Universitas Lambung Mangkurat, Banjarbaru, Kalimantan Selatan, Indonesia</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <form onsubmit="event.preventDefault(); alert('This is a demo form. Replace with a real handler later.');">
+        <!-- <div>
+          <form action="https://formspree.io/f/xyzabc123" method="POST">
             <div class="form-group">
               <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your name" required />
+              <input id="name" type="text" placeholder="Your name" name="name" required />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input id="email" type="email" placeholder="you@example.com" required />
+              <input id="email" type="email" placeholder="you@example.com" name="email" required />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input id="subject" type="text" placeholder="How can we help?" />
+              <input id="subject" type="text" placeholder="How can we help?" name="subject" />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" placeholder="Your message"></textarea>
+              <textarea id="message" placeholder="Your message" name="message"></textarea>
             </div>
             <button type="submit" class="btn-submit">Send Message</button>
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- Footer -->
