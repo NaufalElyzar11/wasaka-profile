@@ -231,6 +231,13 @@
       border-radius: 0.75rem;
       font-size: 0.85rem;
       border: 1px solid rgba(245, 243, 216, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      background-color: rgba(245, 243, 216, 0.15);
+      border-color: rgba(175, 208, 110, 0.5);
+      color: var(--beige);
     }
 
     .hero-visual {
@@ -259,6 +266,13 @@
       border-radius: 999px;
       background-color: rgba(29, 42, 98, 0.1);
       border: 1px solid rgba(29, 42, 98, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+      background-color: rgba(175, 208, 110, 0.15);
+      border-color: rgba(175, 208, 110, 0.7);
+      color: var(--fern-green);
     }
 
     /* Generic cards + grid */
@@ -277,6 +291,13 @@
       padding: 1.25rem;
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
       border: 1px solid rgba(148, 163, 184, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+      border-color: rgba(175, 208, 110, 0.5);
     }
 
     .card h3 {
@@ -342,6 +363,14 @@
       padding: 0.8rem 1rem;
       box-shadow: 0 7px 16px rgba(15, 23, 42, 0.12);
       border: 1px solid rgba(148, 163, 184, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .role-card:hover {
+      background-color: rgba(175, 208, 110, 0.08);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+      border-color: rgba(175, 208, 110, 0.6);
     }
 
     .role-avatar {
@@ -457,6 +486,15 @@
 
     .achievement-item {
       margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 0.6rem;
+      transition: all 0.3s ease;
+    }
+
+    .achievement-item:hover {
+      background-color: rgba(175, 208, 110, 0.08);
+      padding-left: 1.25rem;
+      border-radius: 0.8rem;
     }
 
     .achievement-item span.year {
@@ -528,6 +566,14 @@
       font-size: 0.85rem;
       color: var(--text-muted);
       border: 1px dashed rgba(67, 113, 24, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .logo-placeholder:hover {
+      transform: scale(1.05);
+      background-color: rgba(175, 208, 110, 0.12);
+      border-color: rgba(67, 113, 24, 1);
+      color: var(--fern-green);
     }
 
     /* Gallery */
@@ -548,6 +594,13 @@
       overflow: hidden;
       box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
       border: 1px solid rgba(148, 163, 184, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+      border-color: rgba(175, 208, 110, 0.5);
     }
 
     .gallery-thumb {
@@ -613,6 +666,9 @@
       border-left: 3px solid var(--pistachio);
       border-radius: 0.8rem;
       transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     .contact-card:hover {
@@ -651,12 +707,11 @@
       color: rgba(245, 243, 216, 0.9);
     }
 
-    .contact-info a {
+    .contact-details span {
       color: var(--pistachio);
-      text-decoration: none;
     }
 
-    .contact-info a:hover {
+    .contact-card:hover .contact-details span {
       text-decoration: underline;
     }
 
@@ -1275,40 +1330,40 @@
         <div class="contact-info">
           <div class="contact-cards-grid">
             <!-- Email Card -->
-            <div class="contact-card">
+            <a href="mailto:wasakaroboticteam@gmail.com" class="contact-card">
               <div class="contact-icon">✉️</div>
               <div class="contact-details">
                 <h4>Email</h4>
-                <a href="mailto:wasakaroboticteam@gmail.com">wasakaroboticteam@gmail.com</a>
+                <h4>wasakaroboticteam@gmail.com</h4>
               </div>
-            </div>
+            </a>
 
             <!-- Instagram Card -->
-            <div class="contact-card">
+            <a href="https://www.instagram.com/wasakaroboticteam" target="_blank" class="contact-card">
               <div class="contact-icon">📱</div>
               <div class="contact-details">
                 <h4>Instagram</h4>
-                <a href="https://www.instagram.com/wasakaroboticteam" target="_blank">@wasakaroboticteam</a>
+                <h4>@wasakaroboticteam</h4>
               </div>
-            </div>
+            </a>
 
             <!-- YouTube Card -->
-            <div class="contact-card">
+            <a href="https://www.youtube.com/@WasakaRoboticTeam" target="_blank" class="contact-card">
               <div class="contact-icon">▶️</div>
               <div class="contact-details">
                 <h4>YouTube</h4>
-                <a href="https://www.youtube.com/@WasakaRoboticTeam" target="_blank">Wasaka Robotic Team</a>
+                <h4>Wasaka Robotic Team</h4>
               </div>
-            </div>
+            </a>
 
             <!-- Location Card -->
-            <div class="contact-card">
+            <a href="https://maps.google.com/?q=Lab+Rekayasa+Elektro,+Universitas+Lambung+Mangkurat,+Banjarbaru,+Kalimantan+Selatan,+Indonesia" target="_blank" class="contact-card">
               <div class="contact-icon">📍</div>
               <div class="contact-details">
                 <h4>Lab Location</h4>
-                <p style="font-size: 0.9rem; margin: 0.3rem 0 0 0;">Lab Rekayasa Elektro, Universitas Lambung Mangkurat, Banjarbaru, Kalimantan Selatan, Indonesia</p>
+                <h4>Lab Rekayasa Elektro, Universitas Lambung Mangkurat, Banjarbaru, Kalimantan Selatan, Indonesia</h4>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <!-- <div>
