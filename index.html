@@ -119,6 +119,34 @@
       color: var(--delft-blue);
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 0.3rem;
+    }
+
+    .hamburger span {
+      width: 1.5rem;
+      height: 0.2rem;
+      background-color: var(--beige);
+      border-radius: 0.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -10px);
+    }
+
     /* Hero */
     #home {
       background: radial-gradient(circle at top left, var(--carolina-blue) 0, var(--delft-blue) 55%, #0B102A 100%);
@@ -722,15 +750,39 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
+      .hamburger {
+        display: flex;
+      }
+
       .navbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 0.5rem;
+      }
+
+      .navbar nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(29, 42, 98, 0.99);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        border-top: 1px solid rgba(245, 243, 216, 0.1);
+        padding: 1rem 0;
+      }
+
+      .navbar nav.active {
+        display: block;
       }
 
       .navbar nav ul {
         flex-direction: column;
         width: 100%;
+        padding: 0 1.25rem;
+        gap: 0;
       }
 
       .navbar nav ul li {
@@ -739,7 +791,14 @@
 
       .navbar nav ul li a {
         display: block;
-        padding: 0.5rem 0;
+        padding: 0.65rem 0;
+        border-radius: 0;
+        font-size: 0.95rem;
+      }
+
+      .navbar nav ul li a:hover {
+        background-color: rgba(175, 208, 110, 0.2);
+        color: var(--pistachio);
       }
 
       .hero-visual {
@@ -778,7 +837,12 @@
       <div class="logo">
         WASAKA <span>ROBOTIC TEAM</span>
       </div>
-      <nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navMenu">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -1281,6 +1345,34 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+      if (!isClickInsideNav && hamburger.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>

@@ -146,3 +146,150 @@ Website disusun sebagai **single-page website** dengan navigasi di bagian atas y
   * Hijau sebagai aksen yang memberi kesan segar dan aktif.
 * Struktur konten dirapikan dengan penggunaan card, grid, dan section yang jelas, sehingga pengunjung bisa cepat memindai informasi penting.
 
+---
+
+## 📱 Fitur Mobile & Responsif
+
+### Hamburger Menu (Navigasi Mobile)
+Pada layar mobile dan tablet (lebar kurang dari 768px), menu navigasi berubah menjadi **hamburger menu** yang lebih user-friendly:
+
+* **Ikon Hamburger**: Tiga garis horizontal yang dapat diklik untuk membuka/menutup menu navigasi.
+* **Animasi Smooth**: Ikon hamburger beranimasi menjadi bentuk X saat menu dibuka.
+* **Dropdown Menu**: Menu navigasi muncul di bawah header sebagai dropdown.
+* **Auto-Close**: Menu otomatis menutup saat user:
+  * Mengklik salah satu link navigasi.
+  * Mengklik di luar area menu.
+* **Responsive**: Design yang optimal untuk semua ukuran layar mobile (320px hingga 768px).
+
+### Keuntungan
+✅ Menghemat ruang layar di mobile
+✅ Meningkatkan pengalaman pengguna (user experience)
+✅ Mengurangi gesekan/scrolling pada mobile
+✅ Menu tidak menghalangi konten halaman
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+* **HTML5**: Struktur semantik dan aksesibilitas.
+* **CSS3**: Styling responsif dengan media queries dan custom properties (CSS variables).
+* **JavaScript (Vanilla)**: Interaktivitas tanpa library eksternal, termasuk:
+  * Toggle hamburger menu.
+  * Event listener untuk click detection.
+  * Smooth scroll behavior.
+* **Google Fonts**: Font Inter untuk konsistensi tipografi.
+
+---
+
+## 📊 Komponen Utama
+
+### Breakpoint Responsif
+| Ukuran | Jenis Perangkat | Lebar |
+|--------|-----------------|-------|
+| Mobile | Smartphone | < 480px |
+| Tablet | Tablet/iPad | 480px - 768px |
+| Desktop | Laptop/PC | > 768px |
+
+### Palet Warna
+* `--delft-blue: #1D2A62` – Biru gelap untuk heading dan aksen
+* `--carolina-blue: #87AECE` – Biru cerah untuk background hero
+* `--beige: #F5F3D8` – Krem untuk background utama
+* `--pistachio: #AFD06E` – Hijau untuk button dan aksen
+* `--fern-green: #437118` – Hijau gelap untuk detail
+
+---
+
+## 🔄 Update Terbaru & Changelog
+
+### v1.1 - Responsive Mobile Navigation (April 2026)
+**Fitur Baru:**
+- ✅ Hamburger menu untuk perangkat mobile
+- ✅ Animasi smooth pada toggle hamburger
+- ✅ Auto-close menu pada saat diperlukan
+- ✅ Improved UX di mobile devices
+
+**Perbaikan:**
+- 📌 Layout header yang lebih optimal di mobile
+- 📌 Pengurangan horizontal scrolling pada mobile
+
+### v1.0 - Initial Release
+- Website dasar dengan semua section utama
+- Responsive design untuk desktop dan mobile
+- Integrasi media sosial dan kontak
+- Galeri foto dan showcase robot
+
+---
+
+## 📝 Catatan Pengembangan
+
+* Website masih dalam pengembangan berkelanjutan.
+* Beberapa konten menggunakan placeholder dan dapat diganti dengan data sebenarnya.
+* Form kontak saat ini dinonaktifkan; dapat diaktifkan dengan mengubah section `<form>` di HTML.
+* Recruitment link masih menggunakan placeholder; dapat diubah ke Google Form yang sebenarnya saat recruitment dibuka.
+* Sponsor section saat ini disembunyikan; dapat diaktifkan dengan menghapus komentar HTML.
+
+---
+
+## 🚀 Cara Menggunakan
+
+1. **Buka di Browser**: Buka file `index.html` di web browser.
+2. **Desktop**: Gunakan menu navigasi di bagian atas header.
+3. **Mobile/Tablet**: Klik ikon hamburger (3 garis) untuk membuka menu navigasi.
+4. **Navigasi Halaman**: Klik link untuk menuju section tertentu (smooth scroll).
+
+### Editing Konten
+Semua konten berada dalam file `index.html`. Untuk mengedit:
+
+* **Header/Logo**: Baris ~805
+* **Setiap Section**: Cari tag `<section id="nama-section">`
+* **Styling**: Edit `<style>` di `<head>`
+* **Script**: Edit bagian `<script>` di akhir file sebelum `</body>`
+
+Untuk mempelajari lebih lanjut tentang struktur file:
+- Buka file dengan text editor (VS Code, Sublime Text, dll).
+- Gunakan Ctrl+F untuk mencari section tertentu berdasarkan ID atau heading.
+
+---
+
+## 📞 Kontak & Informasi
+
+| Saluran | Informasi |
+|---------|-----------|
+| **Email** | wasakaroboticteam@gmail.com |
+| **Instagram** | [@wasakaroboticteam](https://www.instagram.com/wasakaroboticteam) |
+| **YouTube** | [Wasaka Robotic Team](https://www.youtube.com/@WasakaRoboticTeam) |
+| **Lokasi** | Lab Rekayasa Elektronika, Universitas Lambung Mangkurat, Banjarbaru, Kalimantan Selatan, Indonesia |
+
+---
+
+## 🤝 Kontribusi & Masukan
+
+Kami menerima saran, feedback, dan ide untuk meningkatkan website. Silakan hubungi kami melalui:
+- 📧 Email: wasakaroboticteam@gmail.com
+- 📱 Instagram: @wasakaroboticteam
+- 💬 Buat issue atau discussion di repository ini
+
+---
+
+## 📄 Lisensi
+
+© 2025-2026 **Wasaka Robotic Team**. All rights reserved.
+
+Website ini adalah milik resmi Wasaka Robotic Team. Konten dapat digunakan untuk tujuan edukatif dan promosi tim dengan mencantumkan sumber.
+
+---
+
+## 📋 Checklist Maintenance
+
+- [ ] Update avatar anggota tim secara berkala
+- [ ] Refresh galeri foto dengan konten terbaru
+- [ ] Update achievement/prestasi tim
+- [ ] Periksa link eksternal (Instagram, YouTube, email)
+- [ ] Test responsive design di berbagai ukuran layar
+- [ ] Update informasi kontak jika ada perubahan
+- [ ] Monitor dan fix broken links
+
+---
+
+**Terakhir diupdate**: April 1, 2026 | **Versi**: 1.1
+
